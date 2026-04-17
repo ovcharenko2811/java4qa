@@ -10,13 +10,13 @@ public class Task2BusinessCoach {
         boolean isBanned = false; // находится ли посетитель в черном списке, хардкодим согласно постановке задачи
 
         boolean isAdult; // есть ли 18 лет
-        boolean isInvitedAndRich; // приглашен ли и не находится ли в черном списке
+        boolean isInvitedOrRich; // есть приглашение или достаточная сумма на счете
         boolean isAllowedToAttend; // итоговое решение, проходит пользователь или нет
         double mandatoryFee; // обязательный добровольный взнос
 
         isAdult = age >= 18;
-        isInvitedAndRich = hasInvitation && accountBalance > 50000;
-        isAllowedToAttend = isAdult && isInvitedAndRich && !isBanned;
+        isInvitedOrRich = hasInvitation || accountBalance > 50000;
+        isAllowedToAttend = isAdult && isInvitedOrRich && !isBanned;
 
         DecimalFormat df = new DecimalFormat("0.00"); // форматирование до 2 знаков после запятой
 
