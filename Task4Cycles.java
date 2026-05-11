@@ -4,7 +4,6 @@ public class Task4Cycles {
     static void main(String[] args) {
         // Объявляем все нужные переменные
         String testStatus;
-        int testNumber;
         int countPass = 0;
         int countFlaky = 0;
         int countBug = 0;
@@ -21,7 +20,7 @@ public class Task4Cycles {
         boolean stopSignal = sc.nextBoolean();
 
         // Проверяем каждый номер - тест
-        for(testNumber =1; testNumber<=100; testNumber++){
+        for(int testNumber =1; testNumber<=100; testNumber++){
             if(testNumber % 3 == 0 && testNumber % 5 == 0){
                 testStatus = "Critical!";
                 countCritical++;
@@ -54,11 +53,9 @@ public class Task4Cycles {
             }
 
             // Продолжение доп. задания "Стоп-сигнал" - проверяем, включен ли стоп-сигнал, передаем break циклу for, и сообщение
-            if(stopSignal == true){
-                if(countCritical == 3){
+            if(stopSignal && countCritical == 3){
                     System.out.println("\uD83D\uDEA8 Слишком много критических багов — будим тимлида!");
                     break;
-                }
             }
         }
 
