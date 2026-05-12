@@ -4,25 +4,32 @@ import java.util.Random;
 public class Task5Methods {
     static void main(String[] args) {
         String code = generateAccessCode();
+        System.out.println("Код: " + code);
+
         boolean isValid = isValidCode(code, 8);
         if(isValid) {
             System.out.println("Код прошел валидацию");
         } else {
             System.out.println("Код НЕ прошел валидацию");
         }
+
         logEvent("Server protection activated");
         logEvent("Intrusion attempt detected",true);
+
         String agent1 = generateAgentId("AGENT", 42);
-        String agent2 = generateAgentId("AGENT", 77);
-        String agent3 = generateAgentId("AGENT", 13);
         System.out.println(agent1);
+
+        String agent2 = generateAgentId("AGENT", 77);
         System.out.println(agent2);
+
+        String agent3 = generateAgentId("AGENT", 13);
         System.out.println(agent3);
     }
 
     public static String generateAccessCode(){
         String currentYear = String.valueOf(Year.now().getValue());
-        int mathPow = (int) Math.pow(3, 7);
+        String mathPow = String.valueOf((int) Math.pow(3, 7));
+        mathPow = mathPow.substring(mathPow.length() - 4, mathPow.length());
         String finalString = new StringBuilder().append(currentYear).append("-").append(mathPow).toString();
         return finalString;
     }
