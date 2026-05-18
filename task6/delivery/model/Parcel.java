@@ -6,8 +6,6 @@ public class Parcel {
     protected double deliveryWeight;
     String trackNumber;
 
-
-
 //- конструктор с аргументами (имя получателя, адрес доставки, вес посылки, трек-номер)
     public Parcel(String recipientName, String deliveryAddress, double deliveryWeight, String trackNumber){
         this.recipientName = recipientName;

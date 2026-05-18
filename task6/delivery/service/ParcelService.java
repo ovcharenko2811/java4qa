@@ -11,7 +11,6 @@ public class ParcelService {
         for(Parcel parcel:parcels){
             parcel.printInfo();
             System.out.println();
-            parcel.calculateDeliveryPrice();
         }
     }
 }

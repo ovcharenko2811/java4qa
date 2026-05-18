@@ -9,7 +9,6 @@ public class FragileParcel extends Parcel{
         this.requiresCarefulHandling = requiresCarefulHandling;
     }
 
-
 //- метод public double calculateDeliveryPrice() - по формуле родительского метода плюс 200 наценка. родительский метод можно вызвать через super.имяМетода()
     public double calculateDeliveryPrice(){
         double deliveryPrice = super.calculateDeliveryPrice() + 200;
