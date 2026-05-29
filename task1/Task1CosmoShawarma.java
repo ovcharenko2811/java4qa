@@ -1,3 +1,5 @@
+package task1;
+
 public class Task1CosmoShawarma {
     public static void main(String[] args) {
     String employeeName = "Глеб";
