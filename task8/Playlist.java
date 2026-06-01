@@ -33,8 +33,9 @@ public class Playlist {
 
     public void updateTrack(int trackIndex, String track){
         if (trackIndex >= 0 && trackIndex < trackList.size()) {
+            String trackOld = trackList.get(trackIndex);
             trackList.set(trackIndex, track);
-            System.out.println("Обновлена песня " + trackIndex + " на \"" + track + "\"");
+            System.out.println("Обновлена песня " + "\"" + trackOld + "\"" + " с номером " + trackIndex + " на \"" + track + "\"");
         } else {
             System.out.println("Неверный индекс: " + trackIndex);
         }
